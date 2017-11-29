@@ -9,7 +9,26 @@ if __name__ == "__main__":
     parser.add_argument('--out', '-o', default='Out')
     args = parser.parse_args()
     
-    base_dir = args.dir
+    # input file structures:
+    # /
+    #   (dir)/
+    #       John_Lennon/
+    #       Darth_Vader/
+    #                   src/
+    
+    # output:
+    # /
+    #   (out)/
+    #       John_Lennon/
+    #       Darth_Vader/
+    #                   log
+    #                   output/
+    #                           classificationxxxx.txt
+    #                           xxxxx.bmp
+    #                           xxxxx.bmp
+    #                           xxxxx.bmp
+    
+    base_dir = args.dir # The dir that includes all the dirs with Student name as dir name
     temp_dir = 'Judge' # get other files(mnist, etc) in this dir
     out_dir = args.out
     os.system('mkdir %s'%out_dir)
